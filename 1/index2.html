@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script
+    src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Homework 1</title>
+    <style>
+        img {
+            width: 300px;
+            border: 1px solid black;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 align="center">{{name}}</h1>
+        </header>
+        <div class="contain">
+            <div class="image">
+                <img align="right" v-bind:src="info.image">
+            </div>
+            <div class="info">
+                <h2 v-text="info.title"></h2>
+                <p>Фамилия: {{info.surname}}</p>
+                <p>Имя: {{info.name}}</p>
+                <p>Возраст: {{info.age}}</p>
+                <p>Логин: {{info.login}}</p>
+                <p>Электронная почта: {{info.email}}</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                name: 'Страничка с информацией',
+                info: {
+                    id:1,
+                    image: 'img/2.jpg',
+                    title:'Информация о пользователе сайта',
+                    surname: 'Петров',
+                    name: 'Вася',
+                    age:'23',
+                    login:'Vasya01',
+                    email: 'petrov.vasiliy@mail.ru'
+                }
+            }
+        })
+    </script>
+</body
+</html>

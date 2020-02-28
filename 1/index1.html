@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Homework 1</title>
+    <style>
+        #app {
+            margin: 0;
+            padding: 0;
+            font-family: 'Mitr';
+        }
+        header{
+            height: 200px;
+            font-size: 1.8rem;
+            text-align: center;
+            color: #198579;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .info{
+            width: 700px;
+            padding: 50px;
+        }
+        img {
+            width: 500px;
+            border: 1px solid black;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>{{name}}</h1>
+        </header>
+        <div class="container">
+            <div v-bind:data-id='product.id'>
+                <div class="image">
+                    <img align="right" v-bind:src='product.image'>
+                </div>
+                <div class="info">
+                    <h2 v-text="product.title"></h2>
+                    <!-- <p v-html="product.description"></p> -->
+                    <p>Модель: {{product.model}}</p>
+                    <p>Бренд: {{product.brand}}</p>
+                    <p>Механическая частота: {{product.frequency}}</p>
+                    <p>Режимы работы: {{product.modes}}</p>
+                    <p>Таймер: {{product.timer}}</p>
+                    <p>Цена: {{product.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Магазин электрических зубных щёток "Tooth Brush"',
+                product: {
+                    id: 1,
+                    title:'Благодаря 7600 возвратно-вращательным движениям в минуту электрическая зубная щетка Braun Oral-B Vitality Cross Action удаляет в два раза больше налёта, чем обычная мануальная. А таймер чистки следит за тем, чтобы вы уделили достаточно времени на гигиеническую процедуру в соответствии с рекомендациями стоматологов.',
+                    model:'Электрическая зубная щетка Braun Oral-B Vitality D100.413.1 Cross Action',
+                    brand:'Braun Oral-B',
+                    frequency:'7 600 возвратно-вращательных движений в минуту',
+                    modes:'1 режим чистки',
+                    timer:'Встроенный двухминутный',
+                    price:'1690 рублей',
+                    image: 'img/1.jpg',
+                }
+            },
+        })
+    </script>
+</body>
+</html>
